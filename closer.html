@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container ">
+    <div class="text-md-center mt-5">
+      <label for="form-control">Enter any Number:</label><br>
+      <input type="number" id="value" placeholder="Enter Number..">
+    </div>
+  </div>
+
+  <div class="container text-center mt-3">
+    <h4>counter:</h4>
+    <label for="" id="add">0</label>
+  </div>
+
+     <div class="container mt-5">
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-success"  onclick="add()">Add</button>
+    <button class="btn btn-danger" onclick="subtract()">Subtract</button>
+    <button class="btn btn-info" onclick="Reset()">Clear</button>
+  </div>
+</div>
+
+<script>
+ debugger
+    let counter = 0;
+    function add() {
+      let temp=document.getElementById("value").value;
+      if(counter<1000){
+      if(temp>0)
+    {
+            counter=counter+parseInt(temp);
+      document.getElementById("value").value = 0;
+    }
+      else{
+        counter=counter+1;
+      }
+      document.getElementById("add").innerHTML=counter;
+    }
+  else{
+    alert("counter only upto 1000");
+  }
+    }
+    function subtract(){
+      let temp=document.getElementById("value").value;
+      if(temp<=counter){
+
+      
+      if(counter>0){
+      if(temp>0){
+
+      
+    
+      counter=counter-parseInt(temp);
+      document.getElementById("value").value=0;
+    }
+    else{
+      counter=counter-1;
+    }
+  
+    document.getElementById("add").innerHTML=counter;
+    }
+    else{
+      alert("counter is not less then 0");
+    }
+  }
+  else{
+    alert("counter is less than input value");
+  }
+  }
+  function Reset(){
+    counter=0;
+    document.getElementById("add").textContent=counter;
+
+  }
+  </script>
+
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
